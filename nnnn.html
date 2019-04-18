@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div id="box">
+	<div>
+	
+		
+		
+	</div>
+	<div>
+		<p>Roblox офигительная игра. Очень увликает детей. И даже взрослых!</p>
+	<img src="./1.jpg" data-src="2.jpg" class="blur">
+	
+	</div>
+	<div>
+		<p>Minecraft тоже классная тгра. суть этих игр развлекуха и многое другое!</p>
+	<img src="./10290.jpg" data-src="10291.jpg" class="blur">
+	
+	</div>
+	</div>
+	<script type="text/javascript">
+		document.addEventListener('scroll', lazyLoad)
+		function lazyLoad() {
+			let lazyList = document.querySelectorAll('.blur');
+			for (let lazy of lazyList) {
+				if (lazy.hasAttribute('data-src')) {
+				if (lazy.getBoundingClientRect().top < window.innerHeight) {
+					let data = lazy.getAttribute('data-src');
+					lazy.setAttribute('src', data);
+					}	
+				}
+			}
+		}
+	</script>
+</body>
+</html>
